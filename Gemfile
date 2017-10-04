@@ -20,6 +20,18 @@ group :development, :test do
   gem 'sqlite3'
   gem 'pry'
   gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
+  gem 'guard-rspec'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'shoulda-matchers', require: false
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'simplecov', :require => false
 end
 
 group :development do
