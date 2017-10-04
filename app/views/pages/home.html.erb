@@ -1,2 +1,42 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id="home-title"> 
+    <h1 class="text-center">Player Stats HomePage</h1>
+</div>
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First</th>
+      <th>Last</th>
+      <th>Position</th>
+      <th>Average</th>
+      <th>HomeRuns</th>
+      <th>RBIs</th>
+      <th>Stolen</th>
+      <th>Hits</th>
+      <th>Bats</th>
+    </tr>
+  </thead>
+  <% @players.each do |player| %>
+  <tbody>
+    <tr>
+      <th scope="row"><%= player.id %></th>
+      <td><%= player.first %></td>
+      <td><%= player.last %></td>
+      <td><%= player.hits %></td>
+        <td><%= player.avg %></td>
+        <td><%= player.bats %></td>
+        <td><%= player.hr %></td>
+        <td><%= player.rbi %></td>
+        <td><%= player.runs %></td>
+        <td><%= player.sb %></td>
+        <td><%= player.ops %></td>
+    </tr>
+  </tbody>
+      <% end %>
+</table>
+
+        
+
+

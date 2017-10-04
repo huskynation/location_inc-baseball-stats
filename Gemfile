@@ -14,6 +14,7 @@ gem 'devise'
 # gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
+gem 'json', '~> 1.8', '>= 1.8.3'
 
 group :development, :test do
   gem 'byebug'
