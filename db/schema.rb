@@ -17,14 +17,14 @@ ActiveRecord::Schema.define(version: 20171004205559) do
     t.string   "first"
     t.string   "last"
     t.string   "position"
+    t.integer  "hits"
+    t.integer  "bats"
     t.integer  "avg"
     t.integer  "hr"
     t.integer  "rbi"
-    t.integer  "runs"
     t.integer  "sb"
+    t.integer  "runs"
     t.integer  "ops"
-    t.integer  "hits"
-    t.integer  "bats"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
