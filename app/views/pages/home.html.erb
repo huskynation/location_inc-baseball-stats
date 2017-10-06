@@ -24,6 +24,7 @@
       <th><%= link_to "Runs", :sort => "runs" %></th>
     </tr>
   </thead>
+  
   <% @players.each do |player| %>
   <tbody>
     <tr>
@@ -44,10 +45,8 @@
       <% end %>
 </table>
 
-<%= will_paginate @players, renderer: BootstrapPagination::Rails %>
-
 <div id="sign-out"> 
-<%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-lg btn-primary" %>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-lg btn-primary" %>
 </div>
 
 
