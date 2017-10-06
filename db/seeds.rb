@@ -1,6 +1,8 @@
 require 'json'
 require 'ostruct'
 
+[Player].each(&:destroy_all)
+
 file = File.read("#{Rails.root}/db/1998_stats.json")
 data_hash = JSON.parse(file).with_indifferent_access
 
@@ -46,18 +48,17 @@ braves_players = data_hash['SEASON']['LEAGUE'][0]['DIVISION'][0]['TEAM'][0]['PLA
       rbi = name[:'RBI']
       sb = name[:'STEALS']
       runs = name[:'RUNS']
-      ops = name[:'']
     
-    Player.create(  first: first,
+    Player.create!(  first: first,
                     last: last,
                     position: position,
                     hits: hits,
                     bats: at_bats,
-                    avg: nil,
+                    avg: 0,
                     hr: hr,
                     rbi: rbi,
                     sb: sb,
-                    ops: ops,
+                    ops: 0,
                     runs: runs
                     )
   end
@@ -69,13 +70,13 @@ florida_players.each do |name|
     position = name[:'POSITION']
     hits = name[:'HITS']
     at_bats = name[:'AT_BATS']
-    avg = name[:'']
+    avg = name[:''] || 0
     hr = name[:'HOME_RUNS']
-    rbi = name[:'RBI']
-    sb = name[:'STEALS']
+    rbi = name[:'RBI'] ||= 0
+    sb = name[:'STEALS'] || 0
     runs = name[:'RUNS']
-    ops = name[:'']
-    Player.create(  first: first,
+    ops = name[:''] || 0
+    Player.create!(  first: first,
                     last: last,
                     position: position,
                     hits: hits,

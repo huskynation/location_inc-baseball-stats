@@ -18,6 +18,7 @@ gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem 'json', '~> 1.8', '>= 1.8.3'
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
+gem 'annotate', git: 'https://github.com/ctran/annotate_models.git', require: false
 
 group :development, :test do
   gem 'byebug'
