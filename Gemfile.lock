@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/ctran/annotate_models.git
+  revision: 5f37a974f3dff68f92b3495115f1399e7db5c584
+  specs:
+    annotate (2.7.2)
+      activerecord (>= 3.2, < 6.0)
+      rake (>= 10.4, < 13.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -278,6 +286,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate!
   byebug
   capybara
   coffee-rails (~> 4.1.0)
@@ -314,4 +323,4 @@ RUBY VERSION
    ruby 2.3.4p301
 
 BUNDLED WITH
-   1.16.0.pre.2
+   1.16.0.pre.3
