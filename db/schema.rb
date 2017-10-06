@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171006034024) do
+ActiveRecord::Schema.define(version: 20171006143653) do
 
   create_table "players", force: :cascade do |t|
     t.string   "first"
     t.string   "last"
     t.string   "position"
-    t.integer  "avg"
+    t.float    "avg"
     t.integer  "hr"
     t.integer  "rbi"
     t.integer  "runs"
