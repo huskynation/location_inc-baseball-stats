@@ -22,6 +22,7 @@ class Player < ActiveRecord::Base
   before_create :calc_batting_avg
   after_initialize :set_default_values, unless: :valid?
   validates :first, :last, :position, :avg, :hr, :rbi, :runs, :sb, :ops, :hits, :bats, presence: true
+  default_scope { order(avg: 'DESC') }
   
   
 private
