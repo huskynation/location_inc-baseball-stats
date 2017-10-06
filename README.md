@@ -4,5 +4,5 @@ Clone the repository below to your local machine or cloud-based dev environment.
 
 Run ```rake db:migrate && rake db:seed```
 
-Rails Version: '4.2.9'
-Version: '2.3.4'
+- Rails Version: 4.2.9
+- Ruby Version: 2.3.4
