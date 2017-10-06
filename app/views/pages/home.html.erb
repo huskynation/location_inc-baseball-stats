@@ -20,14 +20,15 @@
     </tr>
   </thead>
   
-   <div id="products">
-   <%= render "pages/home" %>
- </div>
- <script>
+  <div id="page_links">
+    <%= render "pages/home" %>
+  </div>
+  
+  <script>
    $(function(){
      $('.pagination a').attr('data-remote', 'true')
    });
- </script>
+   </script>
 
 
 <div id="sign-out"> 
