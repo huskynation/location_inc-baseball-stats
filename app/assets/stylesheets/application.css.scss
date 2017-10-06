@@ -15,4 +15,23 @@
  *= require_self
  */
  
- body {margin: 20px;}
+ body {
+     margin: 20px;
+     background-image: url("http://i.imgur.com/sRyeLqp.jpg");
+    //  background-image: url("baseball-player-pitcher-ball-163487_dark");
+    
+    /* Center and scale the image nicely */
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* Full height */
+    height: 100%; 
+ }
+ 
+ #login {
+     color: #FFFFFF;
+ }
+     
+ #home-title {
+     color: #FFFFFF;
+ }

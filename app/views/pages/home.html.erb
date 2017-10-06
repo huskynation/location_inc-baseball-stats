@@ -40,6 +40,12 @@
 </table>
 
 <%= will_paginate @players, renderer: BootstrapPagination::Rails %>
+
+<div id="sign-out"> 
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-lg btn-primary" %>
+</div>
+
+
         
 
 
