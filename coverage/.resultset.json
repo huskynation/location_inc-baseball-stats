@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/ubuntu/workspace/spec/models/player_spec.rb": [
+      "/home/ubuntu/workspace/spec/views/pages/home.html.erb_spec.rb": [
         1,
         null,
         1,
@@ -69,23 +69,37 @@
       ],
       "/home/ubuntu/workspace/app/helpers/application_helper.rb": [
         1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        1,
+        0,
+        null,
         null
       ],
       "/home/ubuntu/workspace/app/helpers/pages_helper.rb": [
         1,
         null
       ],
-      "/home/ubuntu/workspace/app/models/player.rb": [
+      "/home/ubuntu/workspace/app/helpers/remote_link_pagination_helper.rb": [
         1,
-        1,
-        0,
-        0,
-        0,
-        0,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null
       ]
     },
-    "timestamp": 1507155188
+    "timestamp": 1507471533
   }
 }
