@@ -8,20 +8,20 @@
 
 
 <table class="table table-striped table-hover">
-  <thead>
+  <thead id="col-header">
     <tr>
-      <th><%= link_to "Player", :sort => "id" %></th>
-      <th><%= link_to "First", :sort => "first" %></th>
-      <th><%= link_to "Last", :sort => "last" %></th>
-      <th><%= link_to "Position", :sort => "position" %></th>
-      <th><%= link_to "Hits", :sort => "hits" %></th>
-      <th><%= link_to "Bats", :sort => "bats" %></th>
-      <th><%= link_to "Average", :sort => "avg" %></th>
-      <th><%= link_to "HomeRuns", :sort => "hr" %></th>
-      <th><%= link_to "RBIs", :sort => "rbi" %></th>
-      <th><%= link_to "Stolen", :sort => "sb" %></th>
-      <th><%= link_to "OPS", :sort => "ops" %></th>
-      <th><%= link_to "Runs", :sort => "runs" %></th>
+      <th><%= "PLAYER" %></th>
+      <th><%= sort_column "First" %></th>
+      <th><%= sort_column "Last" %></th>
+      <th><%= sort_column "Position" %></th>
+      <th><%= sort_column "Hits" %></th>
+      <th><%= sort_column "Bats" %></th>
+      <th><%= sort_column "Average" %></th>
+      <th><%= sort_column "HomeRuns"  %></th>
+      <th><%= sort_column "RBIs" %></th>
+      <th><%= sort_column "Stolen"  %></th>
+      <th><%= sort_column "OPS" %></th>
+      <th><%= sort_column "Runs" %></th>
     </tr>
   </thead>
   
