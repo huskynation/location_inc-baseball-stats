@@ -1,3 +1,23 @@
+# == Schema Information
+#
+# Table name: players
+#
+#  id         :integer          not null, primary key
+#  first      :string
+#  last       :string
+#  position   :string
+#  avg        :float
+#  hr         :integer
+#  rbi        :integer
+#  runs       :integer
+#  sb         :integer
+#  ops        :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  hits       :integer
+#  bats       :integer
+#
+
 class Player < ActiveRecord::Base
   
   before_create :calc_batting_avg
@@ -29,9 +49,9 @@ class Player < ActiveRecord::Base
   end
   
 
-# Formula = (hits % # at_bats)
+  # Formula = (hits % # at_bats)
   def calc_obp
-  obp = (hits.to_f + walks.to_f + hbp.to_f) / (bats.to_f + walks.to_f + hbp.to_f)
+    obp = (hits.to_f + walks.to_f + hbp.to_f) / (bats.to_f + walks.to_f + hbp.to_f)
     self.obp = obp
   end
   
@@ -39,9 +59,6 @@ class Player < ActiveRecord::Base
     ops = calc_obp + calc_slg
     self.ops = ops
   end
-  
-
-
   
 private
   def set_default_values
@@ -61,4 +78,5 @@ private
     self.sf ||= 0
     self.obp ||= 0
   end
+
 end
