@@ -14,14 +14,12 @@
       <th><%= sort_column "First" %></th>
       <th><%= sort_column "Last" %></th>
       <th><%= sort_column "Position" %></th>
-      <th><%= sort_column "Hits" %></th>
-      <th><%= sort_column "Bats" %></th>
       <th><%= sort_column "Average" %></th>
       <th><%= sort_column "HomeRuns"  %></th>
       <th><%= sort_column "RBIs" %></th>
+       <th><%= sort_column "Runs" %></th>
       <th><%= sort_column "Stolen"  %></th>
       <th><%= sort_column "OPS" %></th>
-      <th><%= sort_column "Runs" %></th>
     </tr>
   </thead>
   
@@ -32,18 +30,20 @@
       <td><%= player.first %></td>
       <td><%= player.last %></td>
       <td><%= player.position %></td>
-      <td><%= player.hits %></td>
-      <td><%= player.bats %></td>
         <td><%= number_to_percentage(player.avg, precision: 3) %></td>
         <td><%= player.hr %></td>
         <td><%= player.rbi %></td>
-        <td><%= player.sb %></td>
-        <td><%= player.ops %></td>
         <td><%= player.runs %></td>
+        <td><%= player.sb %></td>
+        <td><%= number_to_percentage(player.ops, precision: 3) %></td>
     </tr>
   </tbody>
       <% end %>
 </table>
+
+<div id="page_links">
+  <%= will_paginate @players, remote: true, renderer: BootstrapPagination::Rails %>
+</div>
 
 <div id="sign-out"> 
   <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-lg btn-primary" %>
