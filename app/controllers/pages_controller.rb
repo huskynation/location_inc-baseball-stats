@@ -11,12 +11,11 @@ class PagesController < ApplicationController
   
 private
 
-def sort_column
-  params[:sort] || "name"
-end
-
-def sort_direction
-  params[:direction] || "asc"
-end
-
+  def sort_column
+    params[:sort] || "first"
+  end
+  
+  def sort_direction
+    params[:direction] || "DESC"
+  end
 end
