@@ -6,5 +6,6 @@ class AddColumnsToPlayer < ActiveRecord::Migration
   add_column :players, :hbp, :integer
   add_column :players, :sh, :integer
   add_column :players, :sf, :integer
+  add_column :players, :obp, :float
   end
 end

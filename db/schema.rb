@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20171010174732) do
     t.integer  "hbp"
     t.integer  "sh"
     t.integer  "sf"
+    t.float    "obp"
   end
 
   create_table "users", force: :cascade do |t|

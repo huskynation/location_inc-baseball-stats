@@ -55,6 +55,7 @@ braves_players = data_hash['SEASON']['LEAGUE'][0]['DIVISION'][0]['TEAM'][0]['PLA
       sb = name[:'STEALS']
       runs = name[:'RUNS']
       ops = name[:'']
+      obp = name[:'']
     
     Player.create(  first: first,
                     last: last,
@@ -72,7 +73,8 @@ braves_players = data_hash['SEASON']['LEAGUE'][0]['DIVISION'][0]['TEAM'][0]['PLA
                     rbi: rbi,
                     sb: sb,
                     ops: ops,
-                    runs: runs
+                    runs: runs,
+                    obp: obp
                     )
   end
 
@@ -94,6 +96,8 @@ florida_players.each do |name|
       sb = name[:'STEALS']
       runs = name[:'RUNS']
       ops = name[:'']
+      obp = name[:'']
+      
     Player.create(  first: first,
                     last: last,
                     position: position,
@@ -110,6 +114,7 @@ florida_players.each do |name|
                     rbi: rbi,
                     sb: sb,
                     ops: ops,
-                    runs: runs
+                    runs: runs,
+                    obp: obp
                     )
                   end
