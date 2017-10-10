@@ -14,14 +14,12 @@
       <th><%= link_to "First", :sort => "first" %></th>
       <th><%= link_to "Last", :sort => "last" %></th>
       <th><%= link_to "Position", :sort => "position" %></th>
-      <th><%= link_to "Hits", :sort => "hits" %></th>
-      <th><%= link_to "Bats", :sort => "bats" %></th>
-      <th><%= link_to "Average", :sort => "avg" %></th>
+      <th><%= link_to "Average", :sort => @batting_average %></th>
       <th><%= link_to "HomeRuns", :sort => "hr" %></th>
       <th><%= link_to "RBIs", :sort => "rbi" %></th>
+      <th><%= link_to "Runs", :sort => "runs" %></th>
       <th><%= link_to "Stolen", :sort => "sb" %></th>
       <th><%= link_to "OPS", :sort => "ops" %></th>
-      <th><%= link_to "Runs", :sort => "runs" %></th>
     </tr>
   </thead>
   
@@ -32,14 +30,12 @@
       <td><%= player.first %></td>
       <td><%= player.last %></td>
       <td><%= player.position %></td>
-      <td><%= player.hits %></td>
-      <td><%= player.bats %></td>
         <td><%= number_to_percentage(player.avg, precision: 3) %></td>
         <td><%= player.hr %></td>
         <td><%= player.rbi %></td>
+        <td><%= player.runs %></td>
         <td><%= player.sb %></td>
         <td><%= player.ops %></td>
-        <td><%= player.runs %></td>
     </tr>
   </tbody>
       <% end %>

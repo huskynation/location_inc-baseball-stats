@@ -10,6 +10,8 @@ data_hash = JSON.parse(file).with_indifferent_access
 # data_hash_struct = JSON.parse(file, object_class: OpenStruct)
 # players = data_hash['SEASON']['LEAGUE'][0]['DIVISION'][0]['TEAM'].count
 
+Player.destroy_all
+
 east = data_hash['SEASON']['LEAGUE'][0]['DIVISION'][0]['DIVISION_NAME']
 central = data_hash['SEASON']['LEAGUE'][0]['DIVISION'][1]['DIVISION_NAME']
 west = data_hash['SEASON']['LEAGUE'][0]['DIVISION'][2]['DIVISION_NAME']
@@ -44,48 +46,77 @@ braves_players = data_hash['SEASON']['LEAGUE'][0]['DIVISION'][0]['TEAM'][0]['PLA
       position = name[:'POSITION']
       hits = name[:'HITS']
       at_bats = name[:'AT_BATS']
+      doubles = name[:'DOUBLES']
+      triples = name[:'TRIPLES']
+      walks = name[:'WALKS']
+      hbp = name[:'HIT_BY_PITCH']
+      sh = name[:'SACRIFICE_HITS']
+      sf = name[:'SACRIFICE_FLIES']
       hr = name[:'HOME_RUNS']
       rbi = name[:'RBI']
       sb = name[:'STEALS']
       runs = name[:'RUNS']
+      ops = name[:'']
+      obp = name[:'']
     
     Player.create!(  first: first,
                     last: last,
                     position: position,
                     hits: hits,
                     bats: at_bats,
-                    avg: 0,
-                    hr: hr,
-                    rbi: rbi,
-                    sb: sb,
-                    ops: 0,
-                    runs: runs
-                    )
-  end
-
-florida_players = data_hash['SEASON']['LEAGUE'][0]['DIVISION'][0]['TEAM'][1]['PLAYER']
-florida_players.each do |name|
-    first = name[:'GIVEN_NAME']
-    last = name[:'SURNAME']
-    position = name[:'POSITION']
-    hits = name[:'HITS']
-    at_bats = name[:'AT_BATS']
-    avg = name[:''] || 0
-    hr = name[:'HOME_RUNS']
-    rbi = name[:'RBI'] ||= 0
-    sb = name[:'STEALS'] || 0
-    runs = name[:'RUNS']
-    ops = name[:''] || 0
-    Player.create!(  first: first,
-                    last: last,
-                    position: position,
-                    hits: hits,
-                    bats: at_bats,
+                    doubles: doubles,
+                    triples: triples,
+                    walks: walks,
+                    hbp: hbp,
+                    sh: sh,
+                    sf: sf,
                     avg: nil,
                     hr: hr,
                     rbi: rbi,
                     sb: sb,
                     ops: ops,
-                    runs: runs
+                    runs: runs,
+                    obp: obp
                     )
-end
+  end
+
+florida_players = data_hash['SEASON']['LEAGUE'][0]['DIVISION'][0]['TEAM'][1]['PLAYER']
+florida_players.each do |name|
+      first = name[:'GIVEN_NAME']
+      last = name[:'SURNAME']
+      position = name[:'POSITION']
+      hits = name[:'HITS']
+      at_bats = name[:'AT_BATS']
+      doubles = name[:'DOUBLES']
+      triples = name[:'TRIPLES']
+      walks = name[:'WALKS']
+      hbp = name[:'HIT_BY_PITCH']
+      sh = name[:'SACRIFICE_HITS']
+      sf = name[:'SACRIFICE_FLIES']
+      hr = name[:'HOME_RUNS']
+      rbi = name[:'RBI']
+      sb = name[:'STEALS']
+      runs = name[:'RUNS']
+      ops = name[:'']
+      obp = name[:'']
+      
+    Player.create(  first: first,
+                    last: last,
+                    position: position,
+                    hits: hits,
+                    bats: at_bats,
+                    doubles: doubles,
+                    triples: triples,
+                    walks: walks,
+                    hbp: hbp,
+                    sh: sh,
+                    sf: sf,
+                    avg: nil,
+                    hr: hr,
+                    rbi: rbi,
+                    sb: sb,
+                    ops: ops,
+                    runs: runs,
+                    obp: obp
+                    )
+                  end
