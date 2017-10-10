@@ -35,11 +35,15 @@
         <td><%= player.rbi %></td>
         <td><%= player.runs %></td>
         <td><%= player.sb %></td>
-        <td><%= player.ops %></td>
+        <td><%= number_to_percentage(player.ops, precision: 3) %></td>
     </tr>
   </tbody>
       <% end %>
 </table>
+
+<div id="page_links">
+  <%= will_paginate @players, remote: true, renderer: BootstrapPagination::Rails %>
+</div>
 
 <div id="sign-out"> 
   <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-lg btn-primary" %>

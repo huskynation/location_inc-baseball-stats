@@ -51,12 +51,13 @@ class Player < ActiveRecord::Base
 
   # Formula = (hits % # at_bats)
   def calc_obp
-    obp = (hits.to_f + walks.to_f + hbp.to_f) / (bats.to_f + walks.to_f + hbp.to_f)
+    obp = (hits.to_f + walks.to_f + hbp.to_f) / (bats.to_f + walks.to_f + hbp.to_f+ sf.to_f)
     self.obp = obp
   end
   
   def calc_ops
-    ops = calc_obp + calc_slg
+    n = hits + walks + hbp
+    ops = (n/calc_obp + calc_slg) / 1000
     self.ops = ops
   end
   
