@@ -17,6 +17,7 @@
       <th><%= link_to "RBIs", :sort => "rbi" %></th>
       <th><%= link_to "Stolen", :sort => "sb" %></th>
       <th><%= link_to "Runs", :sort => "runs" %></th>
+      <th><%= link_to "Singles", :sort => "singles" %></th>
     </tr>
   </thead>
   <% @players.each do |player| %>
@@ -34,6 +35,7 @@
         <td><%= player.sb %></td>
         <td><%= player.ops %></td>
         <td><%= player.runs %></td>
+        <td><%= player.singles %></td>
     </tr>
   </tbody>
       <% end %>

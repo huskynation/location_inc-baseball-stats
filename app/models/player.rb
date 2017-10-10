@@ -2,7 +2,9 @@ class Player < ActiveRecord::Base
   before_create :calc_batting_avg
 
   
-  
+  def singles
+    singles = hits - (doubles + triples + hr)
+  end
 
   
 private
