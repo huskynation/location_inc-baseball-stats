@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20171010174732) do
     t.integer  "rbi"
     t.integer  "runs"
     t.integer  "sb"
-    t.integer  "ops"
+    t.float    "ops"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "hits"

@@ -10,21 +10,12 @@
       <th><%= link_to "First", :sort => "first" %></th>
       <th><%= link_to "Last", :sort => "last" %></th>
       <th><%= link_to "Position", :sort => "position" %></th>
-      <th><%= link_to "Hits", :sort => "hits" %></th>
-      <th><%= link_to "Bats", :sort => "bats" %></th>
-      <th><%= link_to "Walks", :sort => "walks" %></th>
-      <th><%= link_to "Doubles", :sort => "doubles" %></th>
-      <th><%= link_to "Triples", :sort => "triples" %></th>
-      <th><%= link_to "SH", :sort => "sh" %></th>
-      <th><%= link_to "SF", :sort => "sf" %></th>
-      <th><%= link_to "HBP", :sort => "hbp" %></th>
       <th><%= link_to "Average", :sort => @batting_average %></th>
       <th><%= link_to "HomeRuns", :sort => "hr" %></th>
       <th><%= link_to "RBIs", :sort => "rbi" %></th>
-      <th><%= link_to "Stolen", :sort => "sb" %></th>
       <th><%= link_to "Runs", :sort => "runs" %></th>
-      <th><%= link_to "Singles", :sort => "singles" %></th>
-      <th><%= link_to "OBP", :sort => "obp" %></th>
+      <th><%= link_to "Stolen", :sort => "sb" %></th>
+      <th><%= link_to "OPS", :sort => "ops" %></th>
     </tr>
   </thead>
   <% @players.each do |player| %>
@@ -34,21 +25,12 @@
       <td><%= player.first %></td>
       <td><%= player.last %></td>
       <td><%= player.position %></td>
-      <td><%= player.hits %></td>
-      <td><%= player.bats %></td>
-      <td><%= player.walks %></td>
-      <td><%= player.doubles %></td>
-      <td><%= player.triples %></td>
-      <td><%= player.sh %></td>
-      <td><%= player.sf %></td>
-      <td><%= player.hbp %></td>
         <td><%= player.avg.to_f %></td>
         <td><%= player.hr %></td>
         <td><%= player.rbi %></td>
-        <td><%= player.sb %></td>
         <td><%= player.runs %></td>
-        <td><%= player.singles %></td>
-        <td><%= player.obp %></td>
+        <td><%= player.sb %></td>
+        <td><%= player.ops %></td>
     </tr>
   </tbody>
       <% end %>
