@@ -14,14 +14,12 @@
       <th><%= sorted "First" %></th>
       <th><%= sorted "Last" %></th>
       <th><%= sorted "Position" %></th>
-      <th><%= sorted "Hits" %></th>
-      <th><%= sorted "Bats" %></th>
       <th><%= sorted "Average" %></th>
       <th><%= sorted "HomeRuns"  %></th>
       <th><%= sorted "RBIs" %></th>
+      <th><%= sorted "Runs" %></th>
       <th><%= sorted "Stolen"  %></th>
       <th><%= sorted "OPS" %></th>
-      <th><%= sorted "Runs" %></th>
     </tr>
   </thead>
   
@@ -32,14 +30,12 @@
       <td><%= player.first %></td>
       <td><%= player.last %></td>
       <td><%= player.position %></td>
-      <td><%= player.hits %></td>
-      <td><%= player.bats %></td>
         <td><%= number_to_percentage(player.avg, precision: 3) %></td>
         <td><%= player.hr %></td>
         <td><%= player.rbi %></td>
+        <td><%= player.runs %></td>
         <td><%= player.sb %></td>
         <td><%= player.ops %></td>
-        <td><%= player.runs %></td>
     </tr>
   </tbody>
       <% end %>
