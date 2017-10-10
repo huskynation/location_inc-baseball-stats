@@ -16,6 +16,6 @@ private
   end
   
   def sort_direction
-    params[:direction] || "DESC"
+    params[:direction] || "desc"
   end
 end
