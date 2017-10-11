@@ -28,5 +28,3 @@ end
     will_paginate collection, params.merge(:renderer => RemoteLinkPaginationHelper::LinkRenderer)
   end
 
-end
-
