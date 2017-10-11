@@ -79,5 +79,4 @@ private
     self.sf ||= 0
     self.obp ||= 0
   end
-
 end
