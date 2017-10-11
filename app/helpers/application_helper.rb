@@ -3,11 +3,15 @@ module ApplicationHelper
         will_paginate collection, params.merge(:renderer => RemoteLinkPaginationHelper::LinkRenderer)
     end
     
-    def sort_column(column, title=nil)
+    def sorted(column, title=nil)
       title ||= column.upcase
-      direction = column == params[:sort] && params[:direction] == 'ASC' ? "DESC" : "ASC"
+      direction = column == sort_column && sort_direction== 'desc' ? "asc" : "desc"
       link_to title, :sort => column, :direction => direction
     end
+
+
+
+end
 
   def resource_name
     :user
@@ -23,5 +27,6 @@ module ApplicationHelper
   def paginate(collection, params= {})
     will_paginate collection, params.merge(:renderer => RemoteLinkPaginationHelper::LinkRenderer)
   end
+
 end
 
