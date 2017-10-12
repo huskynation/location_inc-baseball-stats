@@ -20,15 +20,20 @@
     </tr>
   </thead>
   
-   <div id="products">
-   <%= render "pages/home" %>
- </div>
- <script>
-   $(function(){
-     $('.pagination a').attr('data-remote', 'true')
-   });
- </script>
+  <tbody id="players">
+    <%= render "pages/players" %>
+  </tbody>
+</table>
 
+<div id="players_pagination">
+  <%= will_paginate @players, remote: true, renderer: BootstrapPagination::Rails %>
+</div>
+
+<script>
+ $(function(){
+   $('.pagination a').attr('data-remote', 'true')
+ });
+</script>
 
 <div id="sign-out"> 
   <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-lg btn-primary" %>
