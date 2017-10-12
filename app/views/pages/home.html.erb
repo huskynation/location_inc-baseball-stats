@@ -4,7 +4,7 @@
 
 
 <table class="table table-striped table-hover">
-  <thead>
+  <thead id="col-header">
     <tr>
       <th><%= link_to "Player", :sort => "id" %></th>
       <th><%= link_to "First", :sort => "first" %></th>
@@ -26,7 +26,7 @@
 </table>
 
 <div id="players_pagination">
-  <%= will_paginate @players, remote: true, renderer: BootstrapPagination::Rails %>
+  <%= will_paginate @players, renderer: BootstrapPagination::Rails %>
 </div>
 
 <script>
