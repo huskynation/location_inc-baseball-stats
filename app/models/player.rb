@@ -24,7 +24,7 @@ class Player < ActiveRecord::Base
   before_create :calc_obp
   before_create :calc_ops
   
-  after_initialize :set_default_values, unless: :valid?
+  before_save :set_default_values#, unless: :valid?
   validates :first, :last, :position, :avg, :hr, :rbi, :runs, :sb, :ops, :hits, :bats, presence: true
   
   

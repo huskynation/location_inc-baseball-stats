@@ -9,5 +9,7 @@ FactoryGirl.define do
     runs 147
     sb 5
     ops 1
+    hits 5
+    bats 6
   end
 end

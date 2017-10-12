@@ -1,0 +1,14 @@
+<% @players.each do |player| %>
+  <tr>
+    <td><%= player.id %></td>
+    <td><%= player.first %></td>
+      <td><%= player.last %></td>
+      <td><%= player.position %></td>
+        <td><%= number_to_percentage(player.avg, precision: 3) %></td>
+        <td><%= player.hr %></td>
+        <td><%= player.rbi %></td>
+        <td><%= player.runs %></td>
+        <td><%= player.sb %></td>
+        <td><%= number_to_percentage(player.ops, precision: 3) %></td>
+  </tr>
+<% end %>

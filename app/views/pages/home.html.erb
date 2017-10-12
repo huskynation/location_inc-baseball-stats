@@ -22,27 +22,20 @@
     </tr>
   </thead>
   
-  <% @players.each do |player| %>
-  <tbody>
-    <tr>
-      <th scope="row"><%= player.id %></th>
-      <td><%= player.first %></td>
-      <td><%= player.last %></td>
-      <td><%= player.position %></td>
-        <td><%= number_to_percentage(player.avg, precision: 3) %></td>
-        <td><%= player.hr %></td>
-        <td><%= player.rbi %></td>
-        <td><%= player.runs %></td>
-        <td><%= player.sb %></td>
-        <td><%= number_to_percentage(player.ops, precision: 3) %></td>
-    </tr>
+  <tbody id="players">
+    <%= render "pages/players" %>
   </tbody>
-      <% end %>
 </table>
 
-<div id="page_links">
+<div id="players_pagination">
   <%= will_paginate @players, remote: true, renderer: BootstrapPagination::Rails %>
 </div>
+
+<script>
+ $(function(){
+   $('.pagination a').attr('data-remote', 'true')
+ });
+</script>
 
 <div id="sign-out"> 
   <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-lg btn-primary" %>
