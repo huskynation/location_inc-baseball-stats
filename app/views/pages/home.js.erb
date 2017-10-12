@@ -1,3 +1,4 @@
 $("tbody#players").html('<%= escape_javascript(render partial: 'pages/players') %>');
 $("#players_pagination").html('<%= will_paginate @players, renderer: BootstrapPagination::Rails %>')
 $('.pagination a').attr('data-remote', 'true');
+
