@@ -14,7 +14,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 gem 'devise', '~> 4.3'
-# gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem 'json', '~> 1.8', '>= 1.8.3'
@@ -31,12 +30,12 @@ group :development, :test do
   gem 'guard-rspec', '~> 4.7', '>= 4.7.3'
   gem 'capybara', '~> 2.15', '>= 2.15.4'
   gem 'factory_girl_rails', '~> 4.8'
+  gem 'faker'
 end
 
 group :test do
   gem 'shoulda-matchers', require: false
   gem 'database_cleaner'
-  gem 'faker'
   gem 'simplecov', :require => false
 end
 
