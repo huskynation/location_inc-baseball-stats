@@ -4,7 +4,7 @@
     <td><%= player.first %></td>
       <td><%= player.last %></td>
       <td><%= player.position %></td>
-      <% if player.avg == "NaN" %>
+      <% if player.avg.nan? %>
         <td> <%= "Average Not Available" %></td>
       <% else %>
         <td><%= number_to_percentage(player.avg, precision: 3) %></td>
@@ -13,7 +13,7 @@
       <td><%= player.rbi %></td>
       <td><%= player.runs %></td>
       <td><%= player.sb %></td>
-      <% if player.ops == "NaN" %>
+      <% if player.ops.nan? %>
         <td> <%= "OPS Not Available" %></td>
       <% else %>
         <td><%= number_to_percentage(player.ops, precision: 3) %></td>
