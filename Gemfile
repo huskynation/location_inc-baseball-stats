@@ -22,7 +22,6 @@ gem 'annotate', git: 'https://github.com/ctran/annotate_models.git', require: fa
 
 group :development, :test do
   gem 'byebug'
-  gem 'sqlite3'
   gem 'pry'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.6', '>= 3.6.1'

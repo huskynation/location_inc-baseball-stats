@@ -58,6 +58,7 @@ class Player < ActiveRecord::Base
   def calc_ops
     n = hits + walks + hbp
     ops = (n/calc_obp + calc_slg) / 1000
+    # ops.truncate(3).to_s
     self.ops = ops
   end
   
