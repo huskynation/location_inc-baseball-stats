@@ -1,0 +1,20 @@
+- @players.each do |player|
+  %tr
+    %td= player.id
+    %td= player.first
+    %td= player.last
+    %td= player.position
+    - if player.avg.nan?
+      %td
+        = "Average Not Available"
+    - else
+      %td= number_to_percentage(player.avg, precision: 3)
+    %td= player.hr
+    %td= player.rbi
+    %td= player.runs
+    %td= player.sb
+    - if player.ops.nan?
+      %td
+        = "OPS Not Available"
+    - else
+      %td= number_to_percentage(player.ops, precision: 3)

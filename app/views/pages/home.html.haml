@@ -1,0 +1,31 @@
+#home-title
+  %h1.text-center 1998 MLB Player Stats
+  %h2
+    Total # of Players: #{Player.all.count}
+  %h2
+    Worst Average: #{number_to_percentage(Player.all.min.try(:avg))}
+  %h2
+    Best Average: #{number_to_percentage(Player.all.max.try(:avg))}
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      %th= sorted "id", "PLAYER"
+      %th= sorted "First"
+      %th= sorted "Last"
+      %th= sorted "Position"
+      %th= sorted "avg"
+      %th= sorted "HR"
+      %th= sorted "RBI"
+      %th= sorted "Runs"
+      %th= sorted "SB"
+      %th= sorted "OPS"
+  %tbody#players
+    = render "pages/players"
+#players_pagination
+  = will_paginate @players, renderer: BootstrapPagination::Rails
+:javascript
+  $(function(){
+    $('.pagination a').attr('data-remote', 'true')
+  });
+#sign-out
+  = link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-lg btn-primary"
